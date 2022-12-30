@@ -1,0 +1,185 @@
+@import "@/assets/scss/mixins.scss";
+.video-view {
+  max-width: 1754px;
+  margin: 0px auto;
+  @include flexBox($a: flex-start);
+}
+
+.video-container {
+  padding: 24px 24px 0;
+
+  @include maxDevice1248 {
+    padding: 24px 12px 0;
+  }
+
+  @include maxDevice986 {
+    padding: 24px 8px 0;
+  }
+
+  @include maxDevice500 {
+    padding: 24px 0px 0;
+  }
+}
+
+.handle-ytb-video {
+  // @include flexBox($j: center);
+
+  @include maxDevice500 {
+    position: sticky;
+    top: 56px;
+    left: 0;
+    right: 0;
+    z-index: 201;
+  }
+}
+
+.video-check-icon {
+  color: #808080;
+  margin-left: 2px;
+}
+
+.video-context {
+  margin-block: 12px;
+
+  @include flexBox($j: space-between, $a: flex-end);
+  @include maxDevice500 {
+    padding-inline: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.video-channel-context {
+  @include flexBox($g: 12px);
+
+  @include maxDevice500 {
+    margin-block: 16px;
+  }
+}
+
+.video-description-view-date {
+  @include flexBox($g: 8px);
+}
+
+.video-description {
+  padding: 16px;
+  background-color: #f2f2f2;
+  border-radius: 16px;
+
+  @include maxDevice500 {
+    background-color: #fff;
+  }
+}
+
+.video-tags {
+  margin-bottom: 6px;
+  @include handleOverflowText(1);
+
+  & span {
+    color: #065fd4;
+    line-height: 1.5;
+    cursor: pointer;
+  }
+}
+
+.video-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 8px;
+
+  @include maxDevice500 {
+    font-size: 18px;
+    font-weight: 500;
+  }
+}
+
+.video-channel-context-title {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.video-channel-context-img {
+  width: 40px;
+  height: 40px;
+  @include flexBox($j: center);
+  background-color: #fafafa;
+  border-radius: 50%;
+
+  & > .channel-logo {
+    width: 100%;
+    aspect-ratio: 1/ 1;
+  }
+}
+
+.video-description-view-count,
+.video-description-publish-at {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 14px;
+}
+
+.video-description-text {
+  margin-block: 6px;
+  line-height: 1.5;
+}
+
+.video-context-right {
+  @include flexBox;
+}
+
+.video-context-like {
+  @include flexBox($g: 4px);
+  background-color: #f2f2f2;
+  padding: 12px 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  height: 43px;
+  border-radius: 100px 0 0 100px;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 30px;
+    top: 6px;
+    right: 0;
+    background-color: #0000001a;
+  }
+
+  &:hover {
+    background-color: #e5e5e5;
+  }
+}
+
+.video-context-unlike {
+  background-color: #f2f2f2;
+  height: 43px;
+  cursor: pointer;
+  padding: 12px 18px;
+  @include flexBox($j: center);
+  border-radius: 0 100px 100px 0;
+  transition: all 0.3s ease;
+
+  & .unlike {
+    transform: rotate(180deg);
+  }
+
+  &:hover {
+    background-color: #e5e5e5;
+  }
+}
+
+.handle-title-channel-of-video {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.video-channel-img {
+  width: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  aspect-ratio: 1/1;
+}

@@ -1,0 +1,104 @@
+@import "../../../assets/scss/mixins.scss";
+.videos-if {
+  @include minDevice(600px) {
+    margin-left: 16px;
+  }
+}
+
+.videos {
+  padding-top: 24px;
+}
+
+.video-wrap {
+  padding: 8px;
+  background-color: #fff;
+  cursor: pointer;
+
+  @include maxDevice(500px) {
+    max-width: 100%;
+    flex: 0 0 100%;
+    padding-inline: 0;
+  }
+}
+
+.video {
+  border-radius: 12px;
+  background-color: #fff;
+  padding-bottom: 12px;
+  transition: all 0.5s ease 0.2s;
+
+  @include minDevice(600px) {
+    &:hover {
+      box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 3px 6px 0 rgb(0 0 0 / 20%);
+      transform: scale(1.15);
+      transition: all 0.5s ease 0.8s;
+      z-index: 199;
+    }
+  }
+
+  @include maxDevice(500px) {
+    border-radius: unset;
+  }
+}
+
+.video-img {
+  overflow: hidden;
+
+  & img {
+    width: 100%;
+    border-radius: 12px;
+    aspect-ratio: 16 / 9;
+
+    @include maxDevice(500px) {
+      border-radius: unset;
+    }
+  }
+}
+
+.video-text {
+  display: flex;
+  margin-top: 12px;
+  gap: 12px;
+  padding-left: 8px;
+
+  & h3 {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.4;
+    margin-bottom: 6px;
+    @include handleOverflowText(4);
+  }
+
+  & p {
+    font-size: 14px;
+    color: #606060;
+    margin-bottom: 3px;
+  }
+
+  @include maxDevice(500px) {
+    padding-inline: 8px;
+  }
+}
+
+.video-check-icon {
+  font-size: 12px;
+  margin-left: 2px;
+}
+
+.video-channel-img {
+  min-width: 36px;
+  @include flexBox($j: center);
+  @include circle($w: 36px, $bg: #f6f6f6);
+
+  & img {
+    width: 100%;
+  }
+}
+
+.video-description {
+  @include maxDevice(500px) {
+    .video-description-para {
+      @include flexBox($g: 12px);
+    }
+  }
+}

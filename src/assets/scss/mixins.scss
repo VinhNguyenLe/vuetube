@@ -1,0 +1,119 @@
+@import "./animates.scss";
+
+@mixin flexBox($f: row, $j: flex-start, $a: center, $g: none, $d: flex) {
+  display: $d;
+  flex-direction: $f;
+  gap: $g;
+  justify-content: $j;
+  align-items: $a;
+}
+
+@mixin circle($w, $bg, $b: none) {
+  border-radius: 50%;
+  width: $w;
+  height: $w;
+  background-color: $bg;
+  border: $b;
+}
+
+@mixin centerAbs($isScale: false) {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  @if $isScale {
+    transform: translate(-50%, -50%) scale(1);
+  } @else {
+    transform: translate(-50%, -50%);
+  }
+}
+
+@mixin handleOverflowText($line, $overflow: true) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $line;
+  text-overflow: ellipsis;
+  white-space: normal;
+  @if $overflow {
+    overflow: hidden;
+  }
+}
+
+@mixin floatAnimate($s: 3s) {
+  animation: float $s ease-in-out infinite;
+}
+
+@mixin handleGridResponsive {
+  display: grid;
+  @media screen and (min-width: 993px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  @media screen and (max-width: 992px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media screen and (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media screen and (max-width: 480px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@mixin maxDevice1365 {
+  @media screen and (max-width: 1365px) {
+    @content;
+  }
+}
+
+@mixin maxDevice1248 {
+  @media screen and (max-width: 1248px) {
+    @content;
+  }
+}
+
+@mixin maxDevice986 {
+  @media screen and (max-width: 986px) {
+    @content;
+  }
+}
+
+@mixin maxDevice786 {
+  @media screen and (max-width: 786px) {
+    @content;
+  }
+}
+
+@mixin maxDevice500 {
+  @media screen and (max-width: 500px) {
+    @content;
+  }
+}
+
+@mixin maxDevice345 {
+  @media screen and (max-width: 345px) {
+    @content;
+  }
+}
+
+@mixin customDevice($min, $max) {
+  @media (min-width: $min) and (max-width: $max) {
+    @content;
+  }
+}
+
+@mixin maxDevice($max) {
+  @media screen and (max-width: $max) {
+    @content;
+  }
+}
+
+@mixin minDevice($min) {
+  @media screen and (min-width: $min) {
+    @content;
+  }
+}
+
+@mixin mdDevice() {
+  @media screen and (max-width: 992px) {
+    @content;
+  }
+}

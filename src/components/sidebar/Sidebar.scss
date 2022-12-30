@@ -1,0 +1,42 @@
+@import "../../assets/scss/mixins.scss";
+
+.sidebar {
+  height: calc(100vh - 56px);
+
+  &:hover .el-menu {
+    border-color: #dcdfe6;
+  }
+
+  @include maxDevice(500px) {
+    display: none;
+  }
+}
+
+.el-menu-vertical {
+  height: 100%;
+  padding-top: 12px;
+}
+
+.el-menu-vertical:not(.el-menu--collapse) {
+  width: 240px;
+}
+
+.el-menu-vertical .el-menu-item:hover {
+  background-color: #42d39233;
+}
+
+.sidebar .el-menu-item [class^="el-icon"] {
+  margin-right: 16px;
+}
+
+.sidebar-menu-item-text {
+  font-size: 15px;
+}
+
+.sidebar .el-menu {
+  border-color: transparent;
+}
+
+.el-menu-item.is-active {
+  font-weight: 500;
+}

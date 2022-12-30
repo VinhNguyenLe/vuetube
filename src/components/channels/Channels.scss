@@ -1,0 +1,57 @@
+@import "../../assets/scss/mixins.scss";
+
+.channels-if {
+  border-bottom: 1px solid #e0e0e0;
+  margin-left: 16px;
+}
+
+.channels {
+  display: flex;
+  align-items: center;
+}
+
+.channel-placeholder {
+  & span {
+    color: #ff5252;
+  }
+}
+
+.channel-wrap {
+  padding: 24px 16px;
+  margin-block: 32px;
+  transition: all 0.3s ease;
+  border-radius: 12px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #f0f0f0;
+  }
+
+  @include maxDevice786 {
+    margin-block: 16px;
+    padding: 12px;
+  }
+}
+
+.channel {
+  @include flexBox($g: 16px);
+}
+
+.channel-text {
+  & h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 8px;
+  }
+
+  & p {
+    font-size: 13px;
+    color: #696969;
+    line-height: 1.5;
+  }
+}
+
+.channel-check-icon {
+  font-size: 14px;
+  color: #666;
+}

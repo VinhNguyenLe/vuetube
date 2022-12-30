@@ -1,0 +1,181 @@
+@import "../../assets/scss/mixins.scss";
+
+.navbar {
+  padding: 8px 16px;
+  z-index: 200;
+  background-color: #fff;
+
+  @include maxDevice500 {
+    padding-inline: 8px;
+  }
+
+  @include maxDevice(682px) {
+    gap: 12px;
+  }
+}
+
+.navbar-col-left {
+  gap: 20px;
+
+  @include maxDevice(682px) {
+    gap: 12px;
+  }
+
+  @include maxDevice(408px) {
+    width: 40px;
+  }
+}
+
+.navbar-guide-btn {
+  @include maxDevice786 {
+    display: none;
+  }
+}
+
+.navbar-logo-wrap {
+  @include maxDevice(682px) {
+    padding-right: 12px;
+  }
+}
+
+.navbar-guide-btn,
+.navbar-settings-btn {
+  padding: 8px;
+  width: 40px;
+  aspect-ratio: 1 / 1;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: #888;
+  }
+}
+
+.navbar-settings-btn:hover {
+  transform: rotate(45deg);
+}
+
+.navbar-logo {
+  font-size: 28px;
+  color: #42d392;
+}
+
+.youtube-title {
+  font-family: "Oswald", sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: -1px;
+  margin-left: 2px;
+  background: -webkit-linear-gradient(315deg, #42d392 25%, #647eff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  @include maxDevice(500px) {
+    display: none;
+  }
+}
+
+.navbar-col-center {
+  flex: 0 0 600px;
+  height: 40px;
+
+  @include maxDevice986 {
+    flex-basis: 400px;
+  }
+
+  @include maxDevice(682px) {
+    flex-basis: 280px;
+    flex-grow: 1;
+  }
+
+  @include maxDevice500 {
+    flex-basis: 240px;
+  }
+
+  @include maxDevice(369px) {
+    flex-basis: 200px;
+  }
+}
+
+.navbar-search-input-wrap {
+  border: 1px solid #ccc;
+  height: 40px;
+  border-radius: 40px 0 0 40px;
+  padding-left: 16px;
+  border-right: 0;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:has(input:focus) {
+    border-color: #1c62b9;
+  }
+
+  & input {
+    font-size: 16px;
+    font-weight: 400;
+    flex: 1;
+  }
+
+  & input::placeholder {
+    color: #777;
+  }
+
+  @include maxDevice500 {
+    & .navbar-search-icon {
+      display: block;
+    }
+
+    border-right: 1px solid #ccc;
+    border-radius: 40px;
+    padding-right: 16px;
+  }
+
+  @include maxDevice(369px) {
+    width: 100%;
+    padding-inline: 8px;
+
+    & input {
+      width: 100%;
+    }
+
+    & .navbar-search-icon {
+      display: none;
+    }
+  }
+}
+
+.navbar-search-icon {
+  padding-right: 16px;
+
+  @include maxDevice(369px) {
+    padding-right: 8px;
+  }
+}
+
+.navbar-search-btn-wrap {
+  width: 64px;
+  height: 40px;
+  border: 1px solid #ccc;
+  border-radius: 0 40px 40px 0;
+  cursor: pointer;
+  background-color: #f8f8f8;
+
+  &:hover {
+    background-color: #f0f0f0;
+  }
+
+  @include maxDevice500 {
+    width: 40px;
+    display: none;
+  }
+}
+
+.navbar-search-btn {
+  font-size: 16px;
+  color: #777;
+  font-weight: 500;
+}

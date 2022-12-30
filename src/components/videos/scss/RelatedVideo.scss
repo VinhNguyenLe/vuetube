@@ -1,0 +1,101 @@
+@import "@/assets/scss/mixins.scss";
+
+.related-videos {
+  padding: 24px 24px 0 0;
+
+  @include maxDevice986 {
+    padding: 24px 0 0;
+    display: grid;
+    grid-template-columns: repeat(3, 33.33333%);
+  }
+
+  @include maxDevice(687px) {
+    grid-template-columns: repeat(2, 50%);
+  }
+
+  @include maxDevice(500px) {
+    grid-template-columns: 100%;
+  }
+}
+
+.related-video-link {
+  display: inline-block;
+  margin-bottom: 4px;
+}
+
+.related-video {
+  @include flexBox($a: flex-start, $g: 8px);
+
+  @include maxDevice986 {
+    padding: 8px;
+    flex-direction: column;
+  }
+
+  @include maxDevice500 {
+    padding: 0;
+  }
+}
+
+.related-video-thumbnail {
+  flex: 42%;
+  aspect-ratio: 16 / 9;
+  & img {
+    width: 100%;
+    border-radius: 8px;
+  }
+
+  @include maxDevice500 {
+    width: 100%;
+
+    & img {
+      border-radius: unset;
+    }
+  }
+}
+
+.related-video-content-wrap {
+  flex: calc(58% - 8px);
+
+  @include maxDevice986 {
+    @include flexBox($a: flex-start, $g: 12px);
+  }
+
+  @include maxDevice500 {
+    padding: 8px 12px 12px;
+    width: 100%;
+  }
+}
+
+.related-video-title {
+  @include handleOverflowText(2);
+  font-size: 14px;
+  color: #0f0f0f;
+  line-height: 1.5;
+  margin-bottom: 4px;
+}
+
+.related-video-channel,
+.related-video-publish {
+  font-size: 12px;
+  color: #606060;
+  line-height: 1.5;
+}
+
+.video-check-icon {
+  color: #808080;
+  margin-left: 2px;
+}
+
+.related-video-content-thumbnail {
+  width: 40px;
+  aspect-ratio: 1/1;
+  min-width: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+
+  & img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+  }
+}
